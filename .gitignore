@@ -23,7 +23,6 @@ models/
 policy/weights/
 
 # Datasets, archives, and external storage links
-/assets
 /data
 /train_combined800ep_pipeline
 /policy/DP/data
