@@ -1,0 +1,1701 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="galbot_one_golf">
+  <link name="base_link">
+    </link>
+  <joint name="omni_chassis_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="base_link" />
+    <child link="omni_chassis_base_link" />
+  </joint>
+  <link name="omni_chassis_base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.02644 -0.00449 0.07524" />
+      <mass value="8.04" />
+      <inertia ixx="0.19508898000000002" ixy="0.00306854" ixz="0.01503967" iyy="0.29573702" iyz="-0.00295148" izz="0.3313144" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/chassis/omni_chassis_base_link/obj/omni_chassis_base_link.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <link name="omni_chassis_leg_mount_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+  <joint name="omni_chassis_leg_mount_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.134 0 0.1325" />
+    <parent link="omni_chassis_base_link" />
+    <child link="omni_chassis_leg_mount_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="leg_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="omni_chassis_leg_mount_link" />
+    <child link="leg_base_link" />
+  </joint>
+  <link name="leg_base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="7.000000000000001e-05 -0.05414 0.0" />
+      <mass value="1.58" />
+      <inertia ixx="0.00797474" ixy="8.35e-06" ixz="2e-08" iyy="0.00248067" iyz="6.9e-07" izz="0.00797203" />
+    </inertial>
+  </link>
+  <link name="leg_link1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.21883000000000002 0.00219 -0.0046" />
+      <mass value="5.28" />
+      <inertia ixx="0.0245158" ixy="0.003598" ixz="-0.004119" iyy="0.46437793" iyz="2.301e-05" izz="0.46079615" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/leg/leg_link1/obj/leg_link1.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="leg_joint1" type="fixed">
+    <origin rpy="1.5707963267948966 -0.64795799999999992 3.1415926535897931" xyz="0 0 0" />
+    <parent link="leg_base_link" />
+    <child link="leg_link1" />
+  </joint>
+  <link name="leg_link2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.19484 0.0 0.0" />
+      <mass value="3.3" />
+      <inertia ixx="0.04156241" ixy="7.2e-07" ixz="1.559e-05" iyy="0.23231617000000002" iyz="-2.7799999999999996e-06" izz="0.20323657" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/leg/leg_link2/obj/leg_link2.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="leg_joint2" type="fixed">
+    <origin rpy="3.1413558850843928 0.00029118723743049024 1.974697995753051" xyz="0.45038814514888298 0 0" />
+    <parent link="leg_link1" />
+    <child link="leg_link2" />
+  </joint>
+  <link name="leg_link3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="2e-05 0.01881 -0.011" />
+      <mass value="1.76" />
+      <inertia ixx="0.01102444" ixy="1.13e-06" ixz="-1.26e-06" iyy="0.00878281" iyz="1.26e-06" izz="0.0106222" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/leg/leg_link3/obj/leg_link3.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="leg_joint3" type="fixed">
+    <origin rpy="-3.1414805245696416 -0.00019641659959579449 2.6149128484861226" xyz="0.39019000298266698 0 0" />
+    <parent link="leg_link2" />
+    <child link="leg_link3" />
+  </joint>
+  <link name="leg_link4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 -0.0059900000000000005 -0.06877" />
+      <mass value="0.72" />
+      <inertia ixx="0.00580757" ixy="0.0" ixz="0.0" iyy="0.00591483" iyz="4.67e-06" izz="0.0014004900000000001" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/leg/leg_link4/obj/leg_link4.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="leg_joint4" type="fixed">
+    <origin rpy="2.6628979221835536 -1.5690094936088264 2.0494917108776693" xyz="0.00072282199568499995 0.224676996729649 -0.00035633519379399999" />
+    <parent link="leg_link3" />
+    <child link="leg_link4" />
+  </joint>
+  <link name="leg_link5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.032369999999999996 0.03006" />
+      <mass value="0.41" />
+      <inertia ixx="0.00142201" ixy="0.0" ixz="0.0" iyy="0.00132398" iyz="0.00023940999999999999" izz="0.00156199" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/leg/leg_link5/obj/leg_link5.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="leg_joint5" type="fixed">
+    <origin rpy="1.5701661784411147 3.5999992852531193e-05 -2.2685339162720197e-08" xyz="-0.00044557537277400001 0 0" />
+    <parent link="leg_link4" />
+    <child link="leg_link5" />
+  </joint>
+  <link name="leg_end_effector_mount_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+  <joint name="leg_end_effector_mount_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="leg_link5" />
+    <child link="leg_end_effector_mount_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="torso_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="leg_end_effector_mount_link" />
+    <child link="torso_base_link" />
+  </joint>
+  <link name="torso_base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-4e-05 0.16976 -0.00174" />
+      <mass value="3.3" />
+      <inertia ixx="0.13068739999999998" ixy="-3.799e-05" ixz="2.6e-07" iyy="0.01888968" iyz="-0.00210909" izz="0.13964288" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/torso/torso_base_link/obj/torso_base_link.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <link name="torso_left_arm_mount_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+  <joint name="torso_left_arm_mount_joint" type="fixed">
+    <origin rpy="-1.9653074553998386 1.5681169440909133 -1.9703918934241866" xyz="0.20718002355068499 0.17446387762673499 0.001746368832974" />
+    <parent link="torso_base_link" />
+    <child link="torso_left_arm_mount_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="torso_right_arm_mount_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+  <joint name="torso_right_arm_mount_joint" type="fixed">
+    <origin rpy="3.0086978326233682 1.5666933023824101 -0.1413529786277401" xyz="-0.20287210073937401 0.17626803491135001 0.000247662733516" />
+    <parent link="torso_base_link" />
+    <child link="torso_right_arm_mount_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="torso_head_mount_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+  <joint name="torso_head_mount_joint" type="fixed">
+    <origin rpy="-2.611292211483327 -1.5694216873014879 1.037307258477258" xyz="0.0020724487506360001 0.377715150281348 0.00065070583609100005" />
+    <parent link="torso_base_link" />
+    <child link="torso_head_mount_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="head_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="torso_head_mount_link" />
+    <child link="head_base_link" />
+  </joint>
+  <link name="head_base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.023809999999999998 0.00032 0.01966" />
+      <mass value="0.48" />
+      <inertia ixx="0.0032910599999999997" ixy="8.32e-06" ixz="0.00044358" iyy="0.00375998" iyz="7.18e-06" izz="0.00221683" />
+    </inertial>
+  </link>
+  <link name="head_link1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-2e-05 0.00709 -0.0559" />
+      <mass value="1.5695" />
+      <inertia ixx="0.0069002956" ixy="0.00000152205" ixz="0.00000313295" iyy="0.00683300359" iyz="0.00001009318" izz="0.00116967635" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/head/head_link1/obj/head_link1.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="head_joint1" type="fixed">
+    <origin rpy="0 0 -0.00039499999999999995" xyz="0 0 0" />
+    <parent link="head_base_link" />
+    <child link="head_link1" />
+  </joint>
+  <link name="head_link2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.01835 -0.033479999999999996 0.00642" />
+      <mass value="0.81" />
+      <inertia ixx="0.00000399161" ixy="0.00000129825" ixz="0.00000000392" iyy="0.00000372602" iyz="0.00000000775" izz="0.00000553062" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/head/head_link2/obj/head_link2.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="head_joint2" type="fixed">
+    <origin rpy="-1.5678754581306205 0.41887141498704938 0.001188006840837641" xyz="0.00073522598061699998 0 0" />
+    <parent link="head_link1" />
+    <child link="head_link2" />
+  </joint>
+  <link name="head_end_effector_mount_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+  <joint name="head_end_effector_mount_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="head_link2" />
+    <child link="head_end_effector_mount_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="right_arm_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="torso_right_arm_mount_link" />
+    <child link="right_arm_base_link" />
+  </joint>
+  <link name="right_arm_base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.10506" />
+      <mass value="0.92" />
+      <inertia ixx="0.01075595" ixy="9e-08" ixz="4.1e-07" iyy="0.01077842" iyz="1.896e-05" izz="0.0007042000000000001" />
+    </inertial>
+  </link>
+  <link name="right_arm_link1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 -0.0009699999999999999 -0.015390000000000001" />
+      <mass value="0.128" />
+      <inertia ixx="0.0002663848" ixy="1.5136e-06" ixz="5.52e-08" iyy="0.0002712968" iyz="2.3808e-06" izz="0.000132192" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/right_arm/right_arm_link1/obj/right_arm_link1.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link1/convex_decomposition/right_arm_link1_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link1/convex_decomposition/right_arm_link1_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_arm_joint1" type="revolute">
+    <origin rpy="0 0 -0.523598775598286" xyz="0 0 0" />
+    <parent link="right_arm_base_link" />
+    <child link="right_arm_link1" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-3.00432619" upper="3.00432619" velocity="1000" />
+  </joint>
+  <link name="right_arm_link2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 -0.09558 0.010150000000000001" />
+      <mass value="0.1144" />
+      <inertia ixx="0.0015503048" ixy="1.6e-08" ixz="9.6e-09" iyy="0.0001263312" iyz="1.56624e-05" izz="0.0015161448" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/right_arm/right_arm_link2/obj/right_arm_link2.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link2/convex_decomposition/right_arm_link2_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link2/convex_decomposition/right_arm_link2_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link2/convex_decomposition/right_arm_link2_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link2/convex_decomposition/right_arm_link2_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link2/convex_decomposition/right_arm_link2_convex_decomposition_4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_arm_joint2" type="revolute">
+    <origin rpy="-1.5700674557768353 0.00070342828977110194 -3.1415921408812504" xyz="0.000126356762218 0.00025030899667300002 -1.8244296e-07" />
+    <parent link="right_arm_link1" />
+    <child link="right_arm_link2" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-1.608062789" upper="1.608062789" velocity="1000" />
+  </joint>
+  <link name="right_arm_link3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 -0.00088 -0.04936" />
+      <mass value="0.1144" />
+      <inertia ixx="0.0009499656" ixy="1.2e-08" ixz="6.8e-08" iyy="0.0009430072000000001" iyz="8.038400000000001e-06" izz="0.00010972" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/right_arm/right_arm_link3/obj/right_arm_link3.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link3/convex_decomposition/right_arm_link3_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link3/convex_decomposition/right_arm_link3_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link3/convex_decomposition/right_arm_link3_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link3/convex_decomposition/right_arm_link3_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link3/convex_decomposition/right_arm_link3_convex_decomposition_4.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link3/convex_decomposition/right_arm_link3_convex_decomposition_5.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link3/convex_decomposition/right_arm_link3_convex_decomposition_6.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link3/convex_decomposition/right_arm_link3_convex_decomposition_7.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link3/convex_decomposition/right_arm_link3_convex_decomposition_8.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_arm_joint3" type="revolute">
+    <origin rpy="-1.5723863315563142 1.0472370998655203 3.1402156373439936" xyz="0.00050791948376799996 -0.350618309792468 -0.00027872326747599999" />
+    <parent link="right_arm_link2" />
+    <child link="right_arm_link3" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-2.916972222" upper="2.916972222" velocity="1000" />
+  </joint>
+  <link name="right_arm_link4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 -0.05614 0.019170000000000003" />
+      <mass value="0.08800000000000001" />
+      <inertia ixx="0.0005611104" ixy="2.56e-08" ixz="9.28e-08" iyy="0.0001294832" iyz="2.71552e-05" izz="0.0005200959999999999" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/right_arm/right_arm_link4/obj/right_arm_link4.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link4/convex_decomposition/right_arm_link4_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link4/convex_decomposition/right_arm_link4_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link4/convex_decomposition/right_arm_link4_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link4/convex_decomposition/right_arm_link4_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link4/convex_decomposition/right_arm_link4_convex_decomposition_4.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link4/convex_decomposition/right_arm_link4_convex_decomposition_5.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_arm_joint4" type="revolute">
+    <origin rpy="-1.5723977082965532 -0.017634321710982892 -3.141564415752649" xyz="5.1814038300000001e-05 -0.0013798969907349999 -2.2093998309999999e-06" />
+    <parent link="right_arm_link3" />
+    <child link="right_arm_link4" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-1.869862177" upper="2.5679938779914944" velocity="1000" />
+  </joint>
+  <link name="right_arm_link5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00044 0.0016899999999999999 -0.13306" />
+      <mass value="0.092" />
+      <inertia ixx="0.0020647944" ixy="1.584e-06" ixz="4.484e-06" iyy="0.0020242504" iyz="1.67456e-05" izz="9.26784e-05" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/right_arm/right_arm_link5/obj/right_arm_link5.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link5/convex_decomposition/right_arm_link5_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link5/convex_decomposition/right_arm_link5_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link5/convex_decomposition/right_arm_link5_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_arm_joint5" type="revolute">
+    <origin rpy="-1.5733625193159759 -0.0079146039231527965 -3.141572343359861" xyz="0.00029920309496299998 -0.36136269681828198 -0.00092729924115999998" />
+    <parent link="right_arm_link4" />
+    <child link="right_arm_link5" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-2.916972222" upper="2.916972222" velocity="1000" />
+  </joint>
+  <link name="right_arm_link6">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00088 0.0072699999999999996 -0.00011999999999999999" />
+      <mass value="0.0376" />
+      <inertia ixx="2.20456e-05" ixy="6.08e-08" ixz="1.152e-07" iyy="2.31824e-05" iyz="1.8e-07" izz="2.37472e-05" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/right_arm/right_arm_link6/obj/right_arm_link6.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_4.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_5.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_6.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_7.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_8.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_9.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_10.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_11.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_12.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_13.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_14.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_15.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_16.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link6/convex_decomposition/right_arm_link6_convex_decomposition_17.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_arm_joint6" type="revolute">
+    <origin rpy="-1.5331524567409356 1.5562239642492197 -3.1039527765994177" xyz="0.000597746481579 -4.0194794828000002e-05 2.2043278e-08" />
+    <parent link="right_arm_link5" />
+    <child link="right_arm_link6" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-0.7353981633974483" upper="0.8226646259971648" velocity="1000" />
+  </joint>
+  <link name="right_arm_link7">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.05751 0.00684 0.011869999999999999" />
+      <mass value="0.064" />
+      <inertia ixx="9.40904e-05" ixy="2.70344e-05" ixz="1.3296e-05" iyy="0.000339148" iyz="6.872e-07" izz="0.0003341136" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/right_arm/right_arm_link7/obj/right_arm_link7.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link7/convex_decomposition/right_arm_link7_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link7/convex_decomposition/right_arm_link7_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link7/convex_decomposition/right_arm_link7_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link7/convex_decomposition/right_arm_link7_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/right_arm/right_arm_link7/convex_decomposition/right_arm_link7_convex_decomposition_4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_arm_joint7" type="revolute">
+    <origin rpy="-1.5706557872713041 0 0" xyz="0.000508051867654 0 0" />
+    <parent link="right_arm_link6" />
+    <child link="right_arm_link7" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-1.538202778" upper="1.538202778" velocity="1000" />
+  </joint>
+  <link name="right_arm_end_effector_mount_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+  <joint name="right_arm_end_effector_mount_joint" type="fixed">
+    <origin rpy="-3.1297320317252182 -0.01098016700612825 3.1261726018360352" xyz="-0.108323757760984 -0.0016444095077650001 0.00074023860561800003" />
+    <parent link="right_arm_link7" />
+    <child link="right_arm_end_effector_mount_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="left_arm_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="torso_left_arm_mount_link" />
+    <child link="left_arm_base_link" />
+  </joint>
+  <link name="left_arm_base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.10506" />
+      <mass value="0.92" />
+      <inertia ixx="0.01075595" ixy="9e-08" ixz="4.1e-07" iyy="0.01077842" iyz="1.896e-05" izz="0.0007042000000000001" />
+    </inertial>
+  </link>
+  <link name="left_arm_link1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0009699999999999999 -0.015390000000000001" />
+      <mass value="0.128" />
+      <inertia ixx="0.0002663848" ixy="1.5136e-06" ixz="5.52e-08" iyy="0.0002712968" iyz="2.3808e-06" izz="0.000132192" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/left_arm/left_arm_link1/obj/left_arm_link1.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link1/convex_decomposition/left_arm_link1_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link1/convex_decomposition/left_arm_link1_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link1/convex_decomposition/left_arm_link1_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link1/convex_decomposition/left_arm_link1_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link1/convex_decomposition/left_arm_link1_convex_decomposition_4.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link1/convex_decomposition/left_arm_link1_convex_decomposition_5.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link1/convex_decomposition/left_arm_link1_convex_decomposition_6.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link1/convex_decomposition/left_arm_link1_convex_decomposition_7.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link1/convex_decomposition/left_arm_link1_convex_decomposition_8.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link1/convex_decomposition/left_arm_link1_convex_decomposition_9.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link1/convex_decomposition/left_arm_link1_convex_decomposition_10.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link1/convex_decomposition/left_arm_link1_convex_decomposition_11.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_arm_joint1" type="revolute">
+    <origin rpy="0 0 0.523598775598286" xyz="0 0 0" />
+    <parent link="left_arm_base_link" />
+    <child link="left_arm_link1" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-3.00432619" upper="3.00432619" velocity="1000" />
+  </joint>
+  <link name="left_arm_link2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.09558 0.010150000000000001" />
+      <mass value="0.1144" />
+      <inertia ixx="0.0015503048" ixy="1.6e-08" ixz="9.6e-09" iyy="0.0001263312" iyz="1.56624e-05" izz="0.0015161448" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/left_arm/left_arm_link2/obj/left_arm_link2.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link2/convex_decomposition/left_arm_link2_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link2/convex_decomposition/left_arm_link2_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link2/convex_decomposition/left_arm_link2_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link2/convex_decomposition/left_arm_link2_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link2/convex_decomposition/left_arm_link2_convex_decomposition_4.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link2/convex_decomposition/left_arm_link2_convex_decomposition_5.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link2/convex_decomposition/left_arm_link2_convex_decomposition_6.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_arm_joint2" type="revolute">
+    <origin rpy="1.5748428971704631 -0.01945410200087494 3.141513935732934" xyz="4.5972020852999997e-05 -0.000106194961875 4.2964641600000001e-07" />
+    <parent link="left_arm_link1" />
+    <child link="left_arm_link2" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-1.608062789" upper="1.608062789" velocity="1000" />
+  </joint>
+  <link name="left_arm_link3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.00088 -0.04936" />
+      <mass value="0.1144" />
+      <inertia ixx="0.0009499656" ixy="1.2e-08" ixz="6.8e-08" iyy="0.0009430072000000001" iyz="8.038400000000001e-06" izz="0.00010972" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/left_arm/left_arm_link3/obj/left_arm_link3.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link3/convex_decomposition/left_arm_link3_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link3/convex_decomposition/left_arm_link3_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link3/convex_decomposition/left_arm_link3_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_arm_joint3" type="revolute">
+    <origin rpy="1.5695117294739407 1.0459764488484451 3.14048094466431" xyz="0.00033636757217099999 0.35063983010058802 0.00022569164315099999" />
+    <parent link="left_arm_link2" />
+    <child link="left_arm_link3" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-2.916972222" upper="2.916972222" velocity="1000" />
+  </joint>
+  <link name="left_arm_link4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.05614 0.019170000000000003" />
+      <mass value="0.08800000000000001" />
+      <inertia ixx="0.0005611104" ixy="2.56e-08" ixz="9.28e-08" iyy="0.0001294832" iyz="2.71552e-05" izz="0.0005200959999999999" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/left_arm/left_arm_link4/obj/left_arm_link4.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link4/convex_decomposition/left_arm_link4_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link4/convex_decomposition/left_arm_link4_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link4/convex_decomposition/left_arm_link4_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link4/convex_decomposition/left_arm_link4_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link4/convex_decomposition/left_arm_link4_convex_decomposition_4.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link4/convex_decomposition/left_arm_link4_convex_decomposition_5.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link4/convex_decomposition/left_arm_link4_convex_decomposition_6.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_arm_joint4" type="revolute">
+    <origin rpy="1.5708263279925723 0.0067155449542342094 -3.1415924521169156" xyz="0.00033522162759199998 -0.00077623026015099996 2.3287311999999999e-08" />
+    <parent link="left_arm_link3" />
+    <child link="left_arm_link4" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-2.5679938779914944" upper="1.869862177" velocity="1000" />
+  </joint>
+  <link name="left_arm_link5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00044 0.0016899999999999999 -0.13306" />
+      <mass value="0.092" />
+      <inertia ixx="0.0020647944" ixy="1.584e-06" ixz="4.484e-06" iyy="0.0020242504" iyz="1.67456e-05" izz="9.26784e-05" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/left_arm/left_arm_link5/obj/left_arm_link5.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link5/convex_decomposition/left_arm_link5_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link5/convex_decomposition/left_arm_link5_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link5/convex_decomposition/left_arm_link5_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_arm_joint5" type="revolute">
+    <origin rpy="-1.5661296754647367 0.0024913568926889784 1.1626366328010285e-05" xyz="-0.001025822564645 0.36040162506235002 0.0016818757124259999" />
+    <parent link="left_arm_link4" />
+    <child link="left_arm_link5" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-2.916972222" upper="2.916972222" velocity="1000" />
+  </joint>
+  <link name="left_arm_link6">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00088 -0.0072699999999999996 -0.00011999999999999999" />
+      <mass value="0.0376" />
+      <inertia ixx="2.20456e-05" ixy="6.320000000000001e-08" ixz="1.184e-07" iyy="2.31824e-05" iyz="1.8e-07" izz="2.37472e-05" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/left_arm/left_arm_link6/obj/left_arm_link6.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_4.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_5.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_6.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_7.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_8.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_9.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_10.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_11.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_12.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_13.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_14.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_15.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_16.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_17.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_18.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link6/convex_decomposition/left_arm_link6_convex_decomposition_19.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_arm_joint6" type="revolute">
+    <origin rpy="1.5988017441307938 1.5544041379857942 0.028001656804949815" xyz="-0.0010608140636390001 -0.00057797972930299999 -2.6528667000000001e-07" />
+    <parent link="left_arm_link5" />
+    <child link="left_arm_link6" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-0.8226646259971648" upper="0.7353981633974483" velocity="1000" />
+  </joint>
+  <link name="left_arm_link7">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.05776 -0.00675 0.011349999999999999" />
+      <mass value="0.064" />
+      <inertia ixx="9.310000000000001e-05" ixy="2.65888e-05" ixz="1.18952e-05" iyy="0.0003392096" iyz="5.256000000000001e-07" izz="0.0003351032" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/left_arm/left_arm_link7/obj/left_arm_link7.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link7/convex_decomposition/left_arm_link7_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link7/convex_decomposition/left_arm_link7_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link7/convex_decomposition/left_arm_link7_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link7/convex_decomposition/left_arm_link7_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/left_arm/left_arm_link7/convex_decomposition/left_arm_link7_convex_decomposition_4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_arm_joint7" type="revolute">
+    <origin rpy="1.570825827340645 0 0" xyz="0.000120041049924 0 0" />
+    <parent link="left_arm_link6" />
+    <child link="left_arm_link7" />
+    <axis xyz="0 0 1" />
+    <limit acceleration="2" effort="1000" jerk="12" lower="-1.538202778" upper="1.538202778" velocity="1000" />
+  </joint>
+  <link name="left_arm_end_effector_mount_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+  <joint name="left_arm_end_effector_mount_joint" type="fixed">
+    <origin rpy="-3.1211040583784451 -0.0068271755407238732 3.1370333292798991" xyz="-0.108162396540586 0.00050636455308699995 8.5800371169999994e-05" />
+    <parent link="left_arm_link7" />
+    <child link="left_arm_end_effector_mount_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="right_gripper_joint" type="fixed">
+    <origin rpy="1.5707963267948966 0 0" xyz="0 0 0" />
+    <parent link="right_arm_end_effector_mount_link" />
+    <child link="right_gripper_flange_link" />
+  </joint>
+  <link name="right_gripper_flange_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0030662 -1.4019E-18 3.383E-18" />
+      <mass value="0.031005" />
+      <inertia ixx="2.2585E-05" ixy="-2.0366E-21" ixz="-3.7461E-22" iyy="1.141E-05" iyz="-7.8518E-23" izz="1.141E-05" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/flange_link.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_gripper_base_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0065 0 0" />
+    <parent link="right_gripper_flange_link" />
+    <child link="right_gripper_base_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="right_gripper_base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.037051 -6.4001E-05 6.4706E-05" />
+      <mass value="0.061747" />
+      <inertia ixx="2.5813E-05" ixy="4.7224E-08" ixz="-3.9403E-11" iyy="7.2859E-05" iyz="-2.962E-10" izz="5.7173E-05" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/base_link.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_gripper_l_knuckle_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.024101 0 0" />
+      <mass value="0.0070682" />
+      <inertia ixx="9.2131e-08" ixy="0" ixz="0" iyy="1.559e-06" iyz="0" izz="1.4931e-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/l_link_1.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_gripper_l_inner_knuckle_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.023769 0 0" />
+      <mass value="0.007802" />
+      <inertia ixx="1.044e-07" ixy="0" ixz="0" iyy="1.6385e-06" iyz="0" izz="1.566e-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/l_link_2.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_gripper_l_inner_knuckle_joint" type="revolute">
+    <parent link="right_gripper_base_link" />
+    <child link="right_gripper_l_inner_knuckle_link" />
+    <origin rpy="1.5707963267948966 1.2465 0" xyz="0.079 0 -0.026" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" lower="-3.13" upper="3.13" velocity="2.0" />
+  </joint>
+  <link name="right_gripper_l_finger_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.016809 0.0019094 0" />
+      <mass value="0.1" />
+      <inertia ixx="3.4734e-06" ixy="0" ixz="0" iyy="1.1619e-05" iyz="0" izz="9.563e-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/l_link_3_zhitao.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/l_link_3_zhitao_convex_decomposition/l_link_3_zhitao_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/l_link_3_zhitao_convex_decomposition/l_link_3_zhitao_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/l_link_3_zhitao_convex_decomposition/l_link_3_zhitao_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/l_link_3_zhitao_convex_decomposition/l_link_3_zhitao_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/l_link_3_zhitao_convex_decomposition/l_link_3_zhitao_convex_decomposition_4.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/l_link_3_zhitao_convex_decomposition/l_link_3_zhitao_convex_decomposition_5.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_gripper_l_finger_joint" type="revolute">
+    <parent link="right_gripper_l_inner_knuckle_link" />
+    <child link="right_gripper_l_finger_link" />
+    <origin rpy="0 0 1.2465" xyz="0.045 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" lower="-3.13" upper="3.13" velocity="2.0" />
+  </joint>
+  <link name="right_gripper_r_knuckle_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.024101 0 0" />
+      <mass value="0.0070682" />
+      <inertia ixx="9.2131e-08" ixy="0" ixz="0" iyy="1.559e-06" iyz="0" izz="1.4931e-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/r_link_1.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_gripper_r_inner_knuckle_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.023769 0 0" />
+      <mass value="0.007802" />
+      <inertia ixx="1.044e-07" ixy="0" ixz="0" iyy="1.6385e-06" iyz="0" izz="1.566e-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/r_link_2.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_gripper_r_inner_knuckle_joint" type="revolute">
+    <parent link="right_gripper_base_link" />
+    <child link="right_gripper_r_inner_knuckle_link" />
+    <origin rpy="1.5707963267948966 -1.2465 0" xyz="0.079 0 0.026" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" lower="-3.13" upper="3.13" velocity="2.0" />
+  </joint>
+  <link name="right_gripper_r_finger_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.016809 -0.0019094 0" />
+      <mass value="0.1" />
+      <inertia ixx="3.4734e-06" ixy="0" ixz="0" iyy="1.1619e-05" iyz="0" izz="9.563e-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/r_link_3_zhitao.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/r_link_3_zhitao_convex_decomposition/r_link_3_zhitao_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/r_link_3_zhitao_convex_decomposition/r_link_3_zhitao_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/r_link_3_zhitao_convex_decomposition/r_link_3_zhitao_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/r_link_3_zhitao_convex_decomposition/r_link_3_zhitao_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_gripper_r_finger_joint" type="revolute">
+    <parent link="right_gripper_r_inner_knuckle_link" />
+    <child link="right_gripper_r_finger_link" />
+    <origin rpy="0 0 -1.2465" xyz="0.045 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" lower="-3.13" upper="3.13" velocity="2.0" />
+  </joint>
+  <joint name="right_gripper_r_knuckle_joint" type="revolute">
+    <parent link="right_gripper_base_link" />
+    <child link="right_gripper_r_knuckle_link" />
+    <origin rpy="1.5707963267948966 -1.2465 0" xyz="0.0745 0 0.0385" />
+    <axis xyz="0 0 -1" />
+    <limit effort="1000" lower="0.0" upper="1.703" velocity="20.0" />
+  </joint>
+  <joint name="right_gripper_l_knuckle_joint" type="revolute">
+    <parent link="right_gripper_base_link" />
+    <child link="right_gripper_l_knuckle_link" />
+    <origin rpy="1.5707963267948966 1.2465 0" xyz="0.0745 0 -0.0385" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" lower="-3.13" upper="3.13" velocity="20.0" />
+  </joint>
+  <link name="right_gripper_tcp_link" />
+  <joint name="right_gripper_tcp_joint" type="fixed">
+    <parent link="right_gripper_base_link" />
+    <child link="right_gripper_tcp_link" />
+    <origin rpy="-1.5707963267948966 0 0" xyz="0.1470480202320212 0 0" />
+  </joint>
+  <joint name="right_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="right_arm_link7" />
+    <child link="right_camera" />
+  </joint>
+  <link name="right_camera">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0621229724155358 -0.0628379837355285 -0.00140310958315455" />
+      <mass value="0.0492751941348016" />
+      <inertia ixx="3.66069470547417E-05" ixy="-3.55284385731841E-07" ixz="3.8533182318026E-07" iyy="3.08593710158624E-05" iyz="-3.07292981503681E-07" izz="8.80145863410975E-06" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/camera/d405_camera/right_wrist_d405_camera/obj/right_wrist_d405_camera.obj" />
+      </geometry>
+      <material name="material_right_wrist_d405_camera">
+        <color rgba="0.7 0.7 0.7 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="left_gripper_joint" type="fixed">
+    <origin rpy="1.5707963267948966 0 0" xyz="0 0 0" />
+    <parent link="left_arm_end_effector_mount_link" />
+    <child link="left_gripper_flange_link" />
+  </joint>
+  <link name="left_gripper_flange_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0030662 -1.4019E-18 3.383E-18" />
+      <mass value="0.031005" />
+      <inertia ixx="2.2585E-05" ixy="-2.0366E-21" ixz="-3.7461E-22" iyy="1.141E-05" iyz="-7.8518E-23" izz="1.141E-05" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/flange_link.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_gripper_base_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0065 0 0" />
+    <parent link="left_gripper_flange_link" />
+    <child link="left_gripper_base_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="left_gripper_base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.037051 -6.4001E-05 6.4706E-05" />
+      <mass value="0.061747" />
+      <inertia ixx="2.5813E-05" ixy="4.7224E-08" ixz="-3.9403E-11" iyy="7.2859E-05" iyz="-2.962E-10" izz="5.7173E-05" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/base_link.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_gripper_l_knuckle_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.024101 0 0" />
+      <mass value="0.0070682" />
+      <inertia ixx="9.2131e-08" ixy="0" ixz="0" iyy="1.559e-06" iyz="0" izz="1.4931e-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/l_link_1.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_gripper_l_inner_knuckle_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.023769 0 0" />
+      <mass value="0.007802" />
+      <inertia ixx="1.044e-07" ixy="0" ixz="0" iyy="1.6385e-06" iyz="0" izz="1.566e-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/l_link_2.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_gripper_l_inner_knuckle_joint" type="revolute">
+    <parent link="left_gripper_base_link" />
+    <child link="left_gripper_l_inner_knuckle_link" />
+    <origin rpy="1.5707963267948966 1.2465 0" xyz="0.079 0 -0.026" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" lower="-3.13" upper="3.13" velocity="2.0" />
+  </joint>
+  <link name="left_gripper_l_finger_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.016809 0.0019094 0" />
+      <mass value="0.1" />
+      <inertia ixx="3.4734e-06" ixy="0" ixz="0" iyy="1.1619e-05" iyz="0" izz="9.563e-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/l_link_3_zhitao.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/l_link_3_zhitao_convex_decomposition/l_link_3_zhitao_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/l_link_3_zhitao_convex_decomposition/l_link_3_zhitao_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/l_link_3_zhitao_convex_decomposition/l_link_3_zhitao_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/l_link_3_zhitao_convex_decomposition/l_link_3_zhitao_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/l_link_3_zhitao_convex_decomposition/l_link_3_zhitao_convex_decomposition_4.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/l_link_3_zhitao_convex_decomposition/l_link_3_zhitao_convex_decomposition_5.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_gripper_l_finger_joint" type="revolute">
+    <parent link="left_gripper_l_inner_knuckle_link" />
+    <child link="left_gripper_l_finger_link" />
+    <origin rpy="0 0 1.2465" xyz="0.045 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" lower="-3.13" upper="3.13" velocity="2.0" />
+  </joint>
+  <link name="left_gripper_r_knuckle_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.024101 0 0" />
+      <mass value="0.0070682" />
+      <inertia ixx="9.2131e-08" ixy="0" ixz="0" iyy="1.559e-06" iyz="0" izz="1.4931e-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/r_link_1.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_gripper_r_inner_knuckle_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.023769 0 0" />
+      <mass value="0.007802" />
+      <inertia ixx="1.044e-07" ixy="0" ixz="0" iyy="1.6385e-06" iyz="0" izz="1.566e-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/r_link_2.obj" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_gripper_r_inner_knuckle_joint" type="revolute">
+    <parent link="left_gripper_base_link" />
+    <child link="left_gripper_r_inner_knuckle_link" />
+    <origin rpy="1.5707963267948966 -1.2465 0" xyz="0.079 0 0.026" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" lower="-3.13" upper="3.13" velocity="2.0" />
+  </joint>
+  <link name="left_gripper_r_finger_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.016809 -0.0019094 0" />
+      <mass value="0.1" />
+      <inertia ixx="3.4734e-06" ixy="0" ixz="0" iyy="1.1619e-05" iyz="0" izz="9.563e-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/gripper/galbot_gripper1/r_link_3_zhitao.obj" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/r_link_3_zhitao_convex_decomposition/r_link_3_zhitao_convex_decomposition_0.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/r_link_3_zhitao_convex_decomposition/r_link_3_zhitao_convex_decomposition_1.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/r_link_3_zhitao_convex_decomposition/r_link_3_zhitao_convex_decomposition_2.stl" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/collision/gripper/galbot_gripper1/convex_decomposition/r_link_3_zhitao_convex_decomposition/r_link_3_zhitao_convex_decomposition_3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_gripper_r_finger_joint" type="revolute">
+    <parent link="left_gripper_r_inner_knuckle_link" />
+    <child link="left_gripper_r_finger_link" />
+    <origin rpy="0 0 -1.2465" xyz="0.045 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" lower="-3.13" upper="3.13" velocity="2.0" />
+  </joint>
+  <joint name="left_gripper_r_knuckle_joint" type="revolute">
+    <parent link="left_gripper_base_link" />
+    <child link="left_gripper_r_knuckle_link" />
+    <origin rpy="1.5707963267948966 -1.2465 0" xyz="0.0745 0 0.0385" />
+    <axis xyz="0 0 -1" />
+    <limit effort="1000" lower="0.0" upper="1.703" velocity="20.0" />
+  </joint>
+  <joint name="left_gripper_l_knuckle_joint" type="revolute">
+    <parent link="left_gripper_base_link" />
+    <child link="left_gripper_l_knuckle_link" />
+    <origin rpy="1.5707963267948966 1.2465 0" xyz="0.0745 0 -0.0385" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" lower="-3.13" upper="3.13" velocity="20.0" />
+  </joint>
+  <link name="left_gripper_tcp_link" />
+  <joint name="left_gripper_tcp_joint" type="fixed">
+    <parent link="left_gripper_base_link" />
+    <child link="left_gripper_tcp_link" />
+    <origin rpy="-1.5707963267948966 0 0" xyz="0.1470480202320212 0 0" />
+  </joint>
+  <joint name="left_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="left_arm_link7" />
+    <child link="left_camera" />
+  </joint>
+  <link name="left_camera">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0687164275307753 0.00742418594708705 -0.0656976688947199" />
+      <mass value="0.0533223543172611" />
+      <inertia ixx="2.57961610647567E-05" ixy="-4.79475020826079E-07" ixz="-1.78893716134214E-06" iyy="1.37594261317448E-05" iyz="2.73965367892125E-07" izz="1.70502507719673E-05" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="assets/embodiments/galbot-one-golf/urdf/meshes/visual/camera/d405_camera/left_wrist_d405_camera/obj/left_wrist_d405_camera.obj" />
+      </geometry>
+      <material name="material_right_wrist_d405_camera">
+        <color rgba="0.7 0.7 0.7 1.0" />
+      </material>
+    </visual>
+  </link>
+</robot>

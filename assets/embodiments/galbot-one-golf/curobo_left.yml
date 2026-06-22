@@ -1,0 +1,126 @@
+robot_cfg:
+  kinematics:
+    use_usd_kinematics: False
+    urdf_path: ../../../../../../assets/embodiments/galbot-one-golf/urdf/galbot_one_golf_robotwin.urdf
+    asset_root_path: ../../../../../../assets/embodiments/galbot-one-golf/urdf
+    base_link: "base_link"
+    ee_link: "left_gripper_tcp_link"
+    collision_link_names:
+      [
+        "omni_chassis_base_link",
+        "leg_link1",
+        "leg_link2",
+        "torso_base_link",
+        "head_base_link",
+        "left_arm_link2",
+        "left_arm_link3",
+        "left_arm_link4",
+        "left_arm_link5",
+        "left_arm_link7",
+        "left_arm_end_effector_mount_link",
+        "right_arm_link2",
+        "right_arm_link3",
+        "right_arm_link4",
+        "right_arm_link5",
+        "right_arm_link7",
+        "right_arm_end_effector_mount_link",
+        "attached_object",
+      ]
+    collision_spheres: ../../../../../../../assets/embodiments/galbot-one-golf/collision_galbot.yml
+    collision_sphere_buffer: 0.002
+    extra_collision_spheres: {"attached_object": 100}
+    extra_links:
+      {
+        "attached_object":
+          {
+            "parent_link_name": "left_gripper_tcp_link",
+            "link_name": "attached_object",
+            "fixed_transform": [0, 0, 0, 1, 0, 0, 0],
+            "joint_type": "FIXED",
+            "joint_name": "attach_joint",
+          },
+      }
+    use_global_cumul: True
+    self_collision_ignore:
+      {
+        "omni_chassis_base_link": ["leg_link1", "leg_link2"],
+        "leg_link1": ["omni_chassis_base_link", "leg_link2", "torso_base_link"],
+        "leg_link2": ["omni_chassis_base_link", "leg_link1", "torso_base_link"],
+        "torso_base_link": ["head_base_link", "leg_link1", "leg_link2", "left_arm_link2", "left_arm_link3", "right_arm_link2", "right_arm_link3"],
+        "head_base_link": ["torso_base_link"],
+        "left_arm_link2": ["torso_base_link", "left_arm_link3", "left_arm_link4", "left_arm_link5"],
+        "left_arm_link3": ["torso_base_link", "left_arm_link2", "left_arm_link4", "left_arm_link5"],
+        "left_arm_link4": ["left_arm_link3", "left_arm_link5"],
+        "left_arm_link5": ["left_arm_link4", "left_arm_link7"],
+        "left_arm_link7": ["left_arm_link5", "left_arm_end_effector_mount_link"],
+        "left_arm_end_effector_mount_link": ["left_arm_link5", "left_arm_link7", "attached_object"],
+        "right_arm_link2": ["torso_base_link", "right_arm_link3", "right_arm_link4", "right_arm_link5"],
+        "right_arm_link3": ["torso_base_link", "right_arm_link2", "right_arm_link4", "right_arm_link5"],
+        "right_arm_link4": ["right_arm_link3", "right_arm_link5"],
+        "right_arm_link5": ["right_arm_link4", "right_arm_link7"],
+        "right_arm_link7": ["right_arm_link5", "right_arm_end_effector_mount_link"],
+        "right_arm_end_effector_mount_link": ["right_arm_link5", "right_arm_link7"],
+      }
+    self_collision_buffer:
+      {
+        "omni_chassis_base_link": 0.0,
+        "leg_link1": 0.0,
+        "leg_link2": 0.0,
+        "torso_base_link": 0.0,
+        "head_base_link": 0.0,
+        "left_arm_link2": 0.0,
+        "left_arm_link3": 0.0,
+        "left_arm_link4": 0.0,
+        "left_arm_link5": 0.0,
+        "left_arm_link7": 0.0,
+        "left_arm_end_effector_mount_link": 0.0,
+        "right_arm_link2": 0.0,
+        "right_arm_link3": 0.0,
+        "right_arm_link4": 0.0,
+        "right_arm_link5": 0.0,
+        "right_arm_link7": 0.0,
+        "right_arm_end_effector_mount_link": 0.0,
+        "attached_object": 0.0,
+      }
+    mesh_link_names: [
+      "omni_chassis_base_link",
+      "leg_link1",
+      "leg_link2",
+      "torso_base_link",
+      "head_base_link",
+      "left_arm_link1",
+      "left_arm_link2",
+      "left_arm_link3",
+      "left_arm_link4",
+      "left_arm_link5",
+      "left_arm_link6",
+      "left_arm_link7",
+      "left_arm_end_effector_mount_link",
+      "right_arm_link2",
+      "right_arm_link3",
+      "right_arm_link4",
+      "right_arm_link5",
+      "right_arm_link6",
+      "right_arm_link7",
+      "right_arm_end_effector_mount_link",
+    ]
+    lock_joints:
+      {
+        "right_arm_joint1": 0.0,
+        "right_arm_joint2": 0.0,
+        "right_arm_joint3": 0.0,
+        "right_arm_joint4": -1.2,
+        "right_arm_joint5": 0.0,
+        "right_arm_joint6": 0.8,
+        "right_arm_joint7": 0.0,
+      }
+    cspace:
+      joint_names: ["left_arm_joint1", "left_arm_joint2", "left_arm_joint3", "left_arm_joint4", "left_arm_joint5", "left_arm_joint6", "left_arm_joint7"]
+      retract_config: [0.0, 0.0, 0.0, -1.2, 0.0, 0.8, 0.0]
+      position_limit_clip: 0.08
+      null_space_weight: [1, 1, 1, 1, 1, 1, 1]
+      cspace_distance_weight: [1, 1, 1, 1, 1, 1, 1]
+      max_acceleration: [15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0]
+      max_jerk: [500.0, 500.0, 500.0, 500.0, 500.0, 500.0, 500.0]
+planner:
+  frame_bias: [0.0, 0.0, 0.0]

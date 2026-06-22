@@ -1,0 +1,214 @@
+urdf_path: ./urdf/galbot_one_golf_robotwin.urdf
+joint_stiffness: 50000
+joint_damping: 300
+gripper_stiffness: 10000
+gripper_damping: 500
+gripper_velocity_gain: 80.0
+passive_gripper_mimic_stiffness: 10000
+passive_gripper_mimic_damping: 500
+drive_passive_gripper_mimic_targets: true
+drive_all_passive_gripper_mimic_targets: true
+sync_passive_gripper_mimic_qpos: false
+passive_gripper_mimic_target_stiffness: 10000
+passive_gripper_mimic_target_damping: 500
+arm_control_substeps: 2
+gripper_static_friction: 3.0
+gripper_dynamic_friction: 3.0
+gripper_joint_friction: 0.015
+move_group:
+- left_gripper_tcp_link
+- right_gripper_tcp_link
+ee_joints:
+- left_gripper_tcp_joint
+- right_gripper_tcp_joint
+arm_joints_name:
+- - left_arm_joint1
+  - left_arm_joint2
+  - left_arm_joint3
+  - left_arm_joint4
+  - left_arm_joint5
+  - left_arm_joint6
+  - left_arm_joint7
+- - right_arm_joint1
+  - right_arm_joint2
+  - right_arm_joint3
+  - right_arm_joint4
+  - right_arm_joint5
+  - right_arm_joint6
+  - right_arm_joint7
+gripper_name:
+- base: left_gripper_r_knuckle_joint
+  drive_mimic: false
+  joints:
+  - - left_gripper_r_knuckle_joint
+    - 1.0
+    - 0.0
+  mimic:
+  - - left_gripper_l_inner_knuckle_joint
+    - 1.0
+    - 0.0
+  - - left_gripper_r_inner_knuckle_joint
+    - -1.0
+    - 0.0
+  - - left_gripper_l_knuckle_joint
+    - 1.0
+    - 0.0
+  - - left_gripper_l_finger_joint
+    - -1.0
+    - 0.0
+  - - left_gripper_r_finger_joint
+    - 1.0
+    - 0.0
+- base: right_gripper_r_knuckle_joint
+  drive_mimic: false
+  joints:
+  - - right_gripper_r_knuckle_joint
+    - 1.0
+    - 0.0
+  mimic:
+  - - right_gripper_l_inner_knuckle_joint
+    - 1.0
+    - 0.0
+  - - right_gripper_r_inner_knuckle_joint
+    - -1.0
+    - 0.0
+  - - right_gripper_l_knuckle_joint
+    - 1.0
+    - 0.0
+  - - right_gripper_l_finger_joint
+    - -1.0
+    - 0.0
+  - - right_gripper_r_finger_joint
+    - 1.0
+    - 0.0
+gripper_bias: 0.0
+gripper_scale:
+- 1.4478656328613533
+- 0.7858846763998151
+homestate:
+- - 1.666072
+  - -1.494408
+  - -0.602519
+  - -2.219958
+  - -0.125042
+  - -0.078665
+  - 0.005945
+- - -1.58182
+  - 1.403496
+  - 0.300348
+  - 2.123268
+  - 0.122958
+  - 0.091728
+  - 0.19225
+fixed_joint_targets:
+  leg_joint1: 0.262958
+  leg_joint2: 0.783792
+  leg_joint3: 0.530745
+  leg_joint4: 0.000012
+  leg_joint5: -0.000036
+  head_joint1: -0.000395
+  head_joint2: 0.418873
+delta_matrix:
+- - 1
+  - 0
+  - 0
+- - 0
+  - 1
+  - 0
+- - 0
+  - 0
+  - 1
+global_trans_matrix:
+- - 1
+  - 0
+  - 0
+- - 0
+  - -1
+  - 0
+- - 0
+  - 0
+  - -1
+robot_pose:
+- - -0.050826613602444726
+  - -0.6499993863975553
+  - 0.03098
+  - 0.707
+  - 0
+  - 0
+  - 0.707
+planner: curobo
+dual_arm: true
+disable_self_collision: true
+rotate_lim:
+- 0
+- 1
+grasp_perfect_direction:
+- front_right
+- front_left
+camera_hidden_link_names:
+  head_camera:
+  - torso_base_link
+  - torso_head_mount_link
+  - head_base_link
+  - head_link1
+  - head_link2
+  - head_end_effector_mount_link
+  left_camera:
+  - left_camera
+  right_camera:
+  - right_camera
+wrist_camera_parent_links:
+  left_camera: left_arm_end_effector_mount_link
+  right_camera: right_arm_end_effector_mount_link
+wrist_camera_local_poses:
+  left_camera:
+    translation:
+    - -0.02892442454518713
+    - 0.010628427686212204
+    - 0.06817050067488575
+    rotation_xyzw:
+    - 0.5209651763255054
+    - -0.520764534504091
+    - 0.48014705247694606
+    - -0.47629653857294957
+    camera_axes: ros
+  right_camera:
+    translation:
+    - -0.029424962032141976
+    - 0.010454379835210689
+    - 0.06960509620283936
+    rotation_xyzw:
+    - 0.5180989175393182
+    - -0.5179387431604637
+    - 0.49039238679516484
+    - -0.47204690121987597
+    camera_axes: ros
+static_camera_list:
+- name: head_camera
+  type: GalbotHeadLeft
+  position:
+  - -0.08341503359878591
+  - -0.43542292425303597
+  - 1.2480129161898743
+  forward:
+  - 0.005360421624442489
+  - 0.7588107845836036
+  - -0.6512892053441798
+  left:
+  - -0.9999487590358832
+  - -0.00153281126072829
+  - -0.010016034880413553
+- name: front_camera
+  type: D435
+  position:
+  - 0
+  - -0.45
+  - 0.85
+  forward:
+  - 0
+  - 1
+  - -0.1
+  left:
+  - -1
+  - 0
+  - 0

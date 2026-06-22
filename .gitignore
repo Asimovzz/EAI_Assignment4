@@ -32,6 +32,12 @@ policy/weights/
 *.tar.gz
 *.part
 
+# Keep only the Galbot embodiment required by Assignment 4
+/assets/*
+!/assets/embodiments/
+/assets/embodiments/*
+!/assets/embodiments/galbot-one-golf/
+
 # Generated training and evaluation output
 **/logs/
 **/eval_logs/
