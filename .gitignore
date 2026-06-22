@@ -1,0 +1,56 @@
+# Python bytecode and tool caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Editors and operating-system metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Model checkpoints and downloaded weights
+**/checkpoints/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+models/
+policy/weights/
+
+# Datasets, archives, and external storage links
+/assets
+/data
+/train_combined800ep_pipeline
+/policy/DP/data
+**/*.zarr/
+*.zip
+*.tar
+*.tar.gz
+*.part
+
+# Generated training and evaluation output
+**/logs/
+**/eval_logs/
+**/outputs/
+**/multirun/
+*.log
+nohup.out
+wandb/
+result/
+eval_result/
+eval_video/
+viewer_show.*
+
+# Locally installed third-party environment
+envs/curobo/
+
+# Temporary working data
+tmp/
+raw_galbot/
+
+README.md

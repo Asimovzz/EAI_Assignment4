@@ -1,0 +1,63 @@
+# Galbot clean data collection config for beat_block_hammer.
+render_freq: 0
+episode_num: 1
+use_seed: false
+save_freq: 15
+embodiment:
+- galbot-one-golf
+arm_control_substeps: 2
+table_height_bias: -0.29
+table_xy_bias:
+- 0.0
+- 0.124174
+table_length: 0.9
+table_width: 0.55
+embodiment_config_overrides:
+  drive_passive_gripper_mimic_targets: true
+  drive_all_passive_gripper_mimic_targets: true
+  sync_passive_gripper_mimic_qpos: false
+  urdf_path: ./urdf/galbot_one_golf_robotwin.urdf
+kinematic_grasp: false
+physical_grasp: true
+hammer_mass: 0.02
+grasp_pre_dis: 0.12
+grasp_dis: 0.01
+grasp_close_pos: 0.1
+grasp_pose_offset:
+- -0.005
+- -0.015
+- -0.005
+grasp_approach_down_angle_deg: 30.0
+place_pre_dis: 0.12
+place_raise_dis: 0.0
+place_final_down_iters: 8
+language_num: 100
+domain_randomization:
+  random_background: false
+  cluttered_table: false
+  clean_background_rate: 1
+  random_head_camera_dis: 0
+  random_table_height: 0
+  random_light: false
+  crazy_random_light_rate: 0
+camera:
+  head_camera_type: GalbotHeadLeft
+  wrist_camera_type: GalbotWrist
+  collect_head_camera: true
+  collect_wrist_camera: true
+data_type:
+  rgb: true
+  third_view: false
+  depth: false
+  pointcloud: false
+  observer: false
+  endpose: true
+  qpos: true
+  mesh_segmentation: false
+  actor_segmentation: false
+pcd_down_sample_num: 1024
+pcd_crop: true
+save_path: ./data
+clear_cache_freq: 5
+collect_data: true
+eval_video_log: false
